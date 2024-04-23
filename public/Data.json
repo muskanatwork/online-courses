@@ -2,19 +2,34 @@
     {
         "image": "src/assets/JS-Thumb.jpg",
         "description": "The Complete 2024 Web Development Bootcamp",
-        "author": "Dr. Angela Yu",
+        "author": "miss Mukaan",
         "price" :"200"
     },
     {
         "image": "src/assets/JS-Thumb.jpg",
-        "description": "Web Development Masterclass - Online Certification Course",
-        "author": "Dr. Angela Yu",
+        "description": "The Complete 2024 Web Development Bootcamp",
+        "author": "Dr. Nisha",
         "price" :"200"
 
     },
     {
         "image": "src/assets/JS-Thumb.jpg",
-        "description": "Web Development Masterclass - Online Certification Course",
+        "description": "The Complete 2024 Web Development Bootcamp",
+        "author": "Dr. Priya",
+        "price" :"200"
+    },{
+        "image": "src/assets/JS-Thumb.jpg",
+        "description": "The Complete 2024 Web Development Bootcamp",
+        "author": "Neha",
+        "price" :"200"
+    },{
+        "image": "src/assets/JS-Thumb.jpg",
+        "description": "The Complete 2024 Web Development Bootcamp",
+        "author": "Dr. Angela Yu",
+        "price" :"200"
+    },{
+        "image": "src/assets/JS-Thumb.jpg",
+        "description": "The Complete 2024 Web Development Bootcamp",
         "author": "Dr. Angela Yu",
         "price" :"200"
     }
