@@ -1,0 +1,21 @@
+[
+    {
+        "image": "src/assets/JS-Thumb.jpg",
+        "description": "The Complete 2024 Web Development Bootcamp",
+        "author": "Dr. Angela Yu",
+        "price" :"200"
+    },
+    {
+        "image": "src/assets/JS-Thumb.jpg",
+        "description": "Web Development Masterclass - Online Certification Course",
+        "author": "Dr. Angela Yu",
+        "price" :"200"
+
+    },
+    {
+        "image": "src/assets/JS-Thumb.jpg",
+        "description": "Web Development Masterclass - Online Certification Course",
+        "author": "Dr. Angela Yu",
+        "price" :"200"
+    }
+]
