@@ -1,3 +1,4 @@
+
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
@@ -6,13 +7,14 @@ import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useState } from 'react';
 
-
-const Courses = ({ content, index,addCardClick}) => {
-    return (
+const AddCourseDetils=(courseDetils)=>{
+    // console.log(courseDetils.courseDetils);
+    courseDetils = courseDetils.courseDetils
+    console.log(courseDetils);
+    return(
         <>
-            <Card
+                    <Card
                 variant="outlined"
                 sx={{
                     mt: 5,
@@ -26,7 +28,7 @@ const Courses = ({ content, index,addCardClick}) => {
                     component="img"
                     width="100"
                     height="100"
-                    src={content.image}
+                    src={courseDetils.image}
                     sx={{
                         borderRadius: '6px',
                         width: { xs: '100%', sm: 150 },
@@ -34,27 +36,22 @@ const Courses = ({ content, index,addCardClick}) => {
                 />
                 <Box sx={{ alignSelf: 'center', ml: 4, display: 'flex', gap: 10 }}>
                     <Typography variant="h6" gutterBottom>
-                        {content.description}
+                        {courseDetils.description}
                     </Typography>
 
                     <Typography variant="body2" color="text.secondary" fontWeight="regular">
-                        {content.author}
+                        {courseDetils.author}
                     </Typography>
-                    <FavoriteBorderIcon />
 
                     <Typography variant="p" gutterBottom fontSize={20} fontWeight={600}>
-                        {content.price}
+                        {courseDetils.price}
                     </Typography>
-                    <Button onClick={()=>addCardClick(index)} variant="contained">Add to card</Button>
                 </Box>
 
             </Card>
+
         </>
-
-
     )
 }
 
-export default Courses
-
-
+export default AddCourseDetils
