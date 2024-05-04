@@ -18,5 +18,22 @@
   margin-right: 70%;
 
 }
+.totelPriceDiv{
+  display: flex;
+  padding: 10px;
+  width: 97.5%;
+  border-radius: 5px;
+  border: 0.5px solid black;
+}
+p{
+  margin-left: 80%;
+}
+.taotalPrice{
+  margin-left: 80%;
+}
+.icons{
+  color: white;
+}
+
 
 

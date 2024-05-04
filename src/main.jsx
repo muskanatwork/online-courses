@@ -2,8 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import Cart from './Components/Cart'
+import AddCard from './Components/AddCard.jsx'
 import Form from './Components/Form'
+import AddWishlist from './Components/AddWishlist.jsx'
+import InquiryForm from './Components/InquiryForm.jsx'
 
 import {
   // BrowserRouter,
@@ -17,18 +19,23 @@ const router = createBrowserRouter([
   },
   {
 
-    path: "/cart",
-    element: <Cart />,
+    path: "/AddCard",
+    element: <AddCard/>,
   },
   {
 
     path: "/wishlist",
-    element: <Cart />,
+    element: <AddWishlist/>,
   },
   {
 
     path: "/profile",
     element: <Form />,
+  },
+  {
+
+    path: "/InquiryForm",
+    element: <InquiryForm />,
   }
 ]);
 

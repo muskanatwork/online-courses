@@ -4,19 +4,21 @@ import Course from './Components/Course'
 import Nav from './Components/Nav'
 import Pagination from '@mui/material/Pagination';
 import { useState } from 'react';
-
-
-
+import InquiryForm from './Components/InquiryForm'
 
 function App() {
 
     const [search, setSearch] = useState('')
     const [selectedCourse, setSelectedCourse] = useState([]);
-    const addCardClick = (index) =>{
-        setSelectedCourse([...selectedCourse,Data[index]])
+    const [wishlist, setWishlist] = useState([]);
+    const addCardClick = (index) => {
+        setSelectedCourse([...selectedCourse, Data[index]])
     }
-
-    console.log(selectedCourse);
+    const addWishlist = (index) => {
+        setWishlist([...wishlist, Data[index]])
+    }
+    console.log(wishlist);
+    // console.log(selectedCourse);
     {/*search logice */ }
     const searchItem = Data.filter((item) => {
         if (search === "") {
@@ -29,7 +31,7 @@ function App() {
     return (
         <>
             {/*Nav bar components */}
-            <Nav state ={selectedCourse} />
+            <Nav state={{ selectedCourse, wishlist }} />
 
             {/*search input */}
             <input type="text" value={search} placeholder='Search' onChange={event => setSearch(event.target.value)} />
@@ -38,13 +40,13 @@ function App() {
             {searchItem.map((content, index) => {
                 return (
                     <Course content={content} index={index} key={index}
-                     addCardClick={addCardClick} />
+                        addCardClick={addCardClick} addWishlist={addWishlist} />
                 )
             })}
-            
+
+
             <Pagination
                 count={3} variant="outlined" shape="rounded" />
-
         </>
     )
 }

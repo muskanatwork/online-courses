@@ -20,20 +20,20 @@ function Nav({state}) {
                 <Typography variant="h6" component='Div'
                     sx={{
                         flexGrow: 1,
-
+                       
                     }} >
                 </Typography>
                 <Box>
                     <Button color='inherit'>Course</Button>
 
-                    <Link to={`/wishlist`}>
+                    <Link  className="icons"to={`/wishlist`} state={state}>
                         <Button color='inherit'>Wishlist</Button>
                     </Link >
 
-                    <Link to={`/cart`} state={state}>
+                    <Link className="icons" to={`/AddCard`} state={state}>
                         <AddShoppingCartIcon />
                     </Link >
-                    <Link to={`/profile`}>
+                    <Link className="icons" to={`/profile`}>
                     <AccountCircleIcon />
                     </Link >
 

@@ -4,14 +4,14 @@
         "image": "src/assets/JS-Thumb.jpg",
         "description": "The Complete 2024 JavaScript",
         "author": "Code with harry",
-        "price" :"200"
+        "price" :500 
     },
 {
         "id": 1,
         "image": "src/assets/backendpython.png",
         "description": "The Complete 2024 Backend Coding",
         "author": "Nisha",
-        "price" :"200"
+        "price" :3000
 
     },
     {
@@ -19,24 +19,24 @@
         "image": "src/assets/maxresdefault (1).jpg",
         "description": "The Complete 2024 ReactJs course",
         "author": "Priya",
-        "price" :"200"
+        "price" :600
     },{
         "id": 3,
         "image": "src/assets/maxresdefault (2).jpg",
         "description": "The Complete 2024 Front-End HTML",
         "author": "Neha",
-        "price" :"200"
+        "price" :700
     },{
         "id": 4,
         "image": "src/assets/maxresdefault (3).jpg",
         "description": "2024 Front-End Web Development",
         "author": "W3Schools",
-        "price" :"200"
+        "price" :590
     },{
         "id": 5,
         "image": "src/assets/maxresdefault.jpg",
         "description": "Complete 2024 Development CSS",
         "author": "Dr. Angela Yu",
-        "price" :"200"
+        "price" :2000
     }
 ]
