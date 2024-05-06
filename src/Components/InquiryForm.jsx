@@ -18,9 +18,7 @@ const InquiryForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/submitForm', {
-            "username": "Muskan"
-        })
+        axios.post('http://localhost:3000/submitForm', formData)
             .then(response => {
                 console.log('Email sent successfully!', response);
                 setFormData({
