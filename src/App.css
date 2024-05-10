@@ -1,8 +1,9 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  margin: auto;
 }
 
 .Are{
@@ -17,6 +18,12 @@
 .Are2{
   margin-right: 70%;
 
+} */
+
+body{
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color:rgb(159, 222, 242);
 }
 .totelPriceDiv{
   display: flex;
@@ -35,5 +42,38 @@ p{
   color: white;
 }
 
-
+.button{
+  margin-top: 30px;
+  margin-left: 60%;
+}
+.search-baar{
+  text-align: center;
+}
+.search-input{
+  width: 40%;
+  margin-top: 30px;
+  border-radius: 25px;
+  border: solid black 2px;
+}
+.sort-order{
+  margin-left: 93%;
+}
+.nav-baar{
+  margin-top: 30px;
+}
+select{
+  border-radius: 25px;
+}
+.pagination{
+  margin-top: 30px;
+  margin-left: 40%;
+}
+.inquiry-button{
+  margin-top: 27px;
+  margin-left: 80px;
+}
+.form{
+  text-align: center;
+  margin-top: 200px;
+}
 

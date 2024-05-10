@@ -1,28 +1,47 @@
 import * as React from 'react';
-import { useLocation, useNavigate } from "react-router-dom";
-import AddCourseDetils from './AddCourseDetils'
+import { useLocation } from "react-router-dom";
+import AddCourseDetils from './AddCourseDetils';
+import Nav from './Nav';
+import { useState, useEffect } from 'react';
 
 const AddCard = () => {
+    const [addCourseList, setAddCourseList] = useState([]);
     const location = useLocation();
-    const navigate = useNavigate();
-    const selectedCourseList = location.state.selectedCourse
-    console.log(selectedCourseList);
-    let totelPrice = 0;
-    for(let i = 0;i<selectedCourseList.length;i++){
-        totelPrice += selectedCourseList[i].price
-    }
-    console.log(totelPrice);
-    
-    
-    return (
-        <>{selectedCourseList.map((courseDetils, i) => {
-            return (<AddCourseDetils courseDetils={courseDetils} key={i} />)
-        })
+
+    useEffect(() => {
+        const selectedCourseList = location.state.selectedCourse;
+        setAddCourseList(selectedCourseList);
+    }, [location.state.selectedCourse]);
+
+    const deleteCourse = (index) => {
+        const updatedCourseList = [];
+        for (let i = 0; i < addCourseList.length; i++) {
+            if (i !== index) {
+                updatedCourseList.push(addCourseList[i]);
+            }
         }
-        <div> <h3 className='taotalPrice'>Total Price:</h3> <p>{totelPrice}</p></div>
+        setAddCourseList(updatedCourseList);
+    };
+    
+
+    let totalPrice = 0;
+    addCourseList.forEach(courseDetails => {
+        totalPrice += courseDetails.price;
+    });
+
+    return (
+        <>
+            <Nav />
+            {addCourseList.map((courseDetils, i) => (
+                    <AddCourseDetils courseDetils={courseDetils} 
+                    deleteCourse={deleteCourse} i={i} key={i}  />
+            ))}
+            <div>
+                <h3 className='totalPrice'>Total Price:</h3>
+                <p>{totalPrice}</p>
+            </div>
         </>
-    )
+    );
 }
 
-export default AddCard
-
+export default AddCard;

@@ -1,20 +1,15 @@
-
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const AddCourseDetils=(courseDetils)=>{
-    // console.log(courseDetils.courseDetils);
-    courseDetils = courseDetils.courseDetils
-    console.log(courseDetils);
-    return(
+const AddCourseDetils = ({courseDetils,deleteCourse,i}) => {
+    return (
         <>
-                    <Card
+        <div >
+            <Card
                 variant="outlined"
                 sx={{
                     mt: 5,
@@ -47,9 +42,11 @@ const AddCourseDetils=(courseDetils)=>{
                         {courseDetils.price}
                     </Typography>
                 </Box>
+                <DeleteIcon onClick={()=>deleteCourse(i)}/>
 
             </Card>
 
+            </div>
         </>
     )
 }

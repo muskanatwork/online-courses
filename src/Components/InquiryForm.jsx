@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material'; // Import Dialog components
 import axios from 'axios';
 
 const InquiryForm = () => {
@@ -11,9 +11,15 @@ const InquiryForm = () => {
         course: ''
     });
 
+    const [open, setOpen] = useState(false); 
+
     const handleChange = (e) => {
         const { id, value } = e.target;
         setFormData({ ...formData, [id]: value });
+    };
+
+    const handleClose = () => {
+        setOpen(false);
     };
 
     const handleSubmit = (e) => {
@@ -27,55 +33,80 @@ const InquiryForm = () => {
                     phoneNumber: '',
                     email: '',
                     course: ''
-                });                
+                });
+                setOpen(true); // Open the dialog when email is sent successfully
             })
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField
-                label="First Name"
-                id="firstName"
-                size="small"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-            />
-            <TextField
-                label="Last Name"
-                id="lastName"
-                size="small"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-            />
-            <TextField
-                label="Phone Number"
-                id="phoneNumber"
-                size="small"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                required
-            />
-            <TextField
-                label="Email"
-                id="email"
-                size="small"
-                value={formData.email}
-                onChange={handleChange}
-                required
-            />
-            <TextField
-                label="Course"
-                id="course"
-                size="small"
-                value={formData.course}
-                onChange={handleChange}
-                required
-            />
-            {/* Other text fields */}
-            <Button type='submit' variant="contained">Submit</Button>
-        </form>
+        <div className='form'>
+            <form onSubmit={handleSubmit}>
+                {/* Form inputs */}
+                <div>
+                <TextField
+                    label="First Name"
+                    id="firstName"
+                    size="small"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                />
+                </div>
+                <br/>
+                <div>
+                <TextField
+                    label="Last Name"
+                    id="lastName"
+                    size="small"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                />
+                </div>
+                <br />
+                <div>
+                <TextField
+                    label="Phone Number"
+                    id="phoneNumber"
+                    size="small"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    required
+                />
+                </div>
+                <br />
+                <div>
+                <TextField
+                    label="Email"
+                    id="email"
+                    size="small"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+                </div>
+                <br />
+                <div>
+                <TextField
+                    label="Course"
+                    id="course"
+                    size="small"
+                    value={formData.course}
+                    onChange={handleChange}
+                    required
+                />
+                </div>
+                <br />
+                <Button type='submit' variant="contained">Submit</Button>
+            </form>
+            {/* Dialog component for displaying success message */}
+            <Dialog open={open} onClose={handleClose} sx={{ '& .MuiDialog-paper': { width: '500px', maxHeight: '80%' } }}>
+                <DialogTitle>Email sent successfully!</DialogTitle>
+                <DialogActions>
+                    <Button onClick={handleClose} autoFocus>Close</Button>
+                </DialogActions>
+            </Dialog>
+        </div>
     );
 };
 
