@@ -32,12 +32,12 @@ body{
   border-radius: 5px;
   border: 0.5px solid black;
 }
-p{
+/* p{
   margin-left: 80%;
-}
-.taotalPrice{
+} */
+/* .taotalPrice{
   margin-left: 80%;
-}
+} */
 .icons{
   color: white;
 }
@@ -54,6 +54,7 @@ p{
   margin-top: 30px;
   border-radius: 25px;
   border: solid black 2px;
+  padding: 5px;
 }
 .sort-order{
   margin-left: 93%;
@@ -75,5 +76,12 @@ select{
 .form{
   text-align: center;
   margin-top: 200px;
+}
+.delet{
+  margin-top: 25px;
+  margin-left: 30px;
+}
+.Price{
+  margin-left: 90%;
 }
 

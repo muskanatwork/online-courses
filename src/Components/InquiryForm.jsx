@@ -103,7 +103,7 @@ const InquiryForm = () => {
             <Dialog open={open} onClose={handleClose} sx={{ '& .MuiDialog-paper': { width: '500px', maxHeight: '80%' } }}>
                 <DialogTitle>Email sent successfully!</DialogTitle>
                 <DialogActions>
-                    <Button onClick={handleClose} autoFocus>Close</Button>
+                    <Button onClick={handleClose} autoFocus>Ok</Button>
                 </DialogActions>
             </Dialog>
         </div>

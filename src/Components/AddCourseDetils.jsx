@@ -42,8 +42,9 @@ const AddCourseDetils = ({courseDetils,deleteCourse,i}) => {
                         {courseDetils.price}
                     </Typography>
                 </Box>
+                <div className='delet'>
                 <DeleteIcon onClick={()=>deleteCourse(i)}/>
-
+                </div>
             </Card>
 
             </div>

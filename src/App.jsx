@@ -1,20 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './Components/Home';
 import AddCard from './Components/AddCard';
 import AddWishlist from './Components/AddWishlist'
-
+import Form from './Components/Form'
+import InquiryForm from "./Components/InquiryForm";
+import ProductDetail from './Components/ProductDetail'
 function App() {
     return (
         <Router>
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/AddCard" component={AddCard} />
-                <Route exact path="/wishlist" component={AddWishlist} />
-                <Route exact path="/profile" component={Form} />
-                <Route exact path="/InquiryForm" component={InquiryForm} />
-                <Route exact path="/ProductDetail" component={ProductDetail} />
-            </Switch>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/AddCard" element={<AddCard />} />
+                <Route path="/wishlist" element={<AddWishlist />} />
+                <Route path="/profile" element={<Form />} />
+                <Route path="/InquiryForm" element={<InquiryForm />} />
+                <Route path="/ProductDetail" element={<ProductDetail />} />
+
+            </Routes>
         </Router>
     );
 }

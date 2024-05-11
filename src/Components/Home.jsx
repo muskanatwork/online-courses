@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState,usePersistState } from 'react';
 import Data from '../Data/Data.json';
 import Course from './Course';
 import Nav from './Nav';
@@ -7,7 +7,7 @@ import '../App.css'
 
 function Home() {
     const [search, setSearch] = useState('');
-    const [selectedCourse, setSelectedCourse] = useState([]);
+    const [selectedCourse, setSelectedCourse] = usePersistState([]);
     const [wishlist, setWishlist] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [sortOrder, setSortOrder] = useState(''); // State to track sorting order
@@ -17,6 +17,11 @@ function Home() {
     const addCardClick = (index) => {
         setSelectedCourse([...selectedCourse, Data[index]]);
     };
+
+    useEffect(()=>{
+        localStorage.setItem('selectedCourse',JSON.stringify(selectedCourse))
+    },[selectedCourse])
+    
 
     const addWishlist = (index) => {
         setWishlist([...wishlist, Data[index]]);

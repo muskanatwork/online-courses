@@ -10,8 +10,6 @@ import { Link } from "react-router-dom";
 import Tooltip from '@mui/material/Tooltip';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 const Course = ({ content, index, addCardClick, addWishlist }) => {
@@ -102,7 +100,7 @@ const Course = ({ content, index, addCardClick, addWishlist }) => {
                 <DialogTitle id="alert-dialog-title">{"Successfully added to cart"}</DialogTitle>
                 <DialogActions>
                     <Button onClick={handleDialogClose} autoFocus>
-                        Close
+                        Ok
                     </Button>
                 </DialogActions>
             </Dialog>

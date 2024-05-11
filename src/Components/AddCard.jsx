@@ -9,9 +9,10 @@ const AddCard = () => {
     const location = useLocation();
 
     useEffect(() => {
-        const selectedCourseList = location.state.selectedCourse;
-        setAddCourseList(selectedCourseList);
-    }, [location.state.selectedCourse]);
+        setAddCourseList(JSON.parse(localStorage.getItem("selectedCourse")));
+    }, []);
+
+    // console.log(localStorage.getItem("selectedCourse"));
 
     const deleteCourse = (index) => {
         const updatedCourseList = [];
@@ -36,7 +37,7 @@ const AddCard = () => {
                     <AddCourseDetils courseDetils={courseDetils} 
                     deleteCourse={deleteCourse} i={i} key={i}  />
             ))}
-            <div>
+            <div className='Price'>
                 <h3 className='totalPrice'>Total Price:</h3>
                 <p>{totalPrice}</p>
             </div>
