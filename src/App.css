@@ -1,24 +1,3 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  margin: auto;
-}
-
-.Are{
-  margin-right: 43%;
-}
-
-.Are1{
-  margin-right: 70%;
-
-}
-
-.Are2{
-  margin-right: 70%;
-
-} */
 
 body{
   padding-left: 40px;
@@ -32,12 +11,6 @@ body{
   border-radius: 5px;
   border: 0.5px solid black;
 }
-/* p{
-  margin-left: 80%;
-} */
-/* .taotalPrice{
-  margin-left: 80%;
-} */
 .icons{
   color: white;
 }
@@ -61,6 +34,7 @@ body{
 }
 .nav-baar{
   margin-top: 30px;
+
 }
 select{
   border-radius: 25px;
@@ -84,4 +58,5 @@ select{
 .Price{
   margin-left: 90%;
 }
+
 

@@ -1,4 +1,4 @@
-import { useEffect, useState,usePersistState } from 'react';
+import { useEffect, useState} from 'react';
 import Data from '../Data/Data.json';
 import Course from './Course';
 import Nav from './Nav';
@@ -6,9 +6,12 @@ import Pagination from '@mui/material/Pagination';
 import '../App.css'
 
 function Home() {
+    const courses = JSON.parse(localStorage.getItem("selectedCourse"))?JSON.parse(localStorage.getItem("selectedCourse")):[]
+    const likeCourse = JSON.parse(localStorage.getItem("wishlist"))?JSON.parse(localStorage.getItem("wishlist")):[]
+
     const [search, setSearch] = useState('');
-    const [selectedCourse, setSelectedCourse] = usePersistState([]);
-    const [wishlist, setWishlist] = useState([]);
+    const [selectedCourse, setSelectedCourse] = useState(courses);
+    const [wishlist, setWishlist] = useState(likeCourse);
     const [currentPage, setCurrentPage] = useState(1);
     const [sortOrder, setSortOrder] = useState(''); // State to track sorting order
 
@@ -21,11 +24,17 @@ function Home() {
     useEffect(()=>{
         localStorage.setItem('selectedCourse',JSON.stringify(selectedCourse))
     },[selectedCourse])
-    
+
 
     const addWishlist = (index) => {
         setWishlist([...wishlist, Data[index]]);
     };
+
+    useEffect(()=>{
+        localStorage.setItem('wishlist',JSON.stringify(wishlist))
+    },[wishlist])
+
+
 
     // For Search 
     const searchItem = Data.filter((item) => {

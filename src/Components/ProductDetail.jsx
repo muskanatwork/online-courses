@@ -15,6 +15,18 @@ const ProductDetail = () => {
     const navigate = useNavigate();
     const content = location.state;
 
+    const handleAddCard = () => {
+        let courses = JSON.parse(localStorage.getItem("selectedCourse")) ? JSON.parse(localStorage.getItem("selectedCourse")) : []
+        courses = [...courses, content]
+        localStorage.setItem("selectedCourse", JSON.stringify(courses))
+    }
+
+    const handleWishlist = () => {
+        let likeCourse = JSON.parse(localStorage.getItem("wishlist")) ? JSON.parse(localStorage.getItem("wishlist")) : []
+        likeCourse = [...likeCourse,content]
+        localStorage.setItem('wishlist',JSON.stringify(likeCourse))
+    }
+
     return (
         <>
             <Nav />
@@ -65,10 +77,10 @@ const ProductDetail = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget quam arcu. Nulla sed accumsan nulla. Cras non neque non turpis laoreet euismod. Fusce finibus leo at nisi faucibus, ut consequat lorem vestibulum. Donec non lectus sit amet dui vulputate interdum sed a mauris. Mauris vitae urna quis sapien rhoncus pellentesque. Integer et volutpat magna, ut tempus lacus.
                         </Typography>
                         <Box mt={2}>
-                            <Button variant="contained" color="primary" onClick={() => {/* Add to Cart functionality */}}>
+                            <Button variant="contained" color="primary" onClick={handleAddCard}>
                                 Add to Cart
                             </Button>
-                            <Button variant="outlined" color="primary" onClick={() => {/* Add to Wishlist functionality */}}>
+                            <Button variant="outlined" color="primary" onClick={handleWishlist}>
                                 Add to Wishlist
                             </Button>
                         </Box>

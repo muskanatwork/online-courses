@@ -6,7 +6,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 
-const WishListDetails = ({content,index,addCardClick}) => {
+const WishListDetails = ({content}) => {
+    const handleWishlist = () => {
+        let likeCourse = JSON.parse(localStorage.getItem("wishlist")) ? JSON.parse(localStorage.getItem("wishlist")) : []
+        likeCourse = [...likeCourse,content]
+        localStorage.setItem('wishlist',JSON.stringify(likeCourse))
+    }
     return(
         <>
         <Card
@@ -42,7 +47,7 @@ const WishListDetails = ({content,index,addCardClick}) => {
                     <Typography variant="p" gutterBottom fontSize={20} fontWeight={600}>
                         {content.price}
                     </Typography>
-                    <Button onClick={()=>addCardClick(index)} variant="contained">Add to card</Button>
+                    <Button onClick={handleWishlist} variant="contained">Add to card</Button>
                 </Box>
             </Card>
 
